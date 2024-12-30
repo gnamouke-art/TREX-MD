@@ -104,12 +104,7 @@
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 
 
-***
+- *Special Thanks For You Bro **[Baraka-Bega❤️](https://github.com/Kingbega)***
 
-### THANKS TO:
-- [***Ibrahim-tech***](https://github.com/ibrahimaitech) For several Cmds Addition.
-- [***Gifted Tech***](https://github.com/mouricedevs) For Genaral Help and Session Generation
-- [***Baraka Bega***](https://github.com/Kingbega) For Code encryption 
-- [***Marisel***](https://github.com/betingrich) For Providing a Base of **TREX-MD**
 
 <a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
