@@ -52,7 +52,7 @@ async function downloadSessionData() {
         console.error('Please add your session to SESSION_ID env !!');
         return false;
     }
-    const sessdata = config.SESSION_ID.split("Trex-MD&")[1];
+    const sessdata = config.SESSION_ID.split("Trex-Md&")[1];
     const url = `https://pastebin.com/raw/${sessdata}`;
     try {
         const response = await axios.get(url);
@@ -83,7 +83,7 @@ async function start() {
                     const msg = await store.loadMessage(key.remoteJid, key.id);
                     return msg.message || undefined;
                 }
-                return { conversation: "Mercedes whatsapp user bot" };
+                return { conversation: "Trex-Md whatsapp user bot" };
             }
         });
 
