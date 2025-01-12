@@ -1,3 +1,5 @@
+
+
 {
   "name": "Trex-Md",
   "description": " Whatsapp bot.",
@@ -20,7 +22,7 @@
     "AUTO_STATUS_SEEN": {
       "description": "make it true if you want bot to view status",
       "required": false,
-      "value": ""
+      "value": "true"
     },
     "AUTO_READ": {
       "description": "make it true if you want bot to read message",
@@ -35,7 +37,7 @@
     "AUTO_RECORDING": {
       "description": "make it true if you want bot to show recording audio",
       "required": false,
-      "value": "true"
+      "value": "false"
     },
     "ALWAYS_ONLINE": {
       "description": "make it true if you want bot to show always online",
@@ -50,7 +52,7 @@
     "REJECT_CALL": {
       "description": "make it true if you want to reject call",
       "required": false,
-      "value": "false"
+      "value": "true"
     }
     },
     "buildpacks": [
