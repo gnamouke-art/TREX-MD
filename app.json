@@ -6,7 +6,7 @@
   "keywords": [
     "whatsapp bot"
   ],
-  "repository": "https://github.com/Berabruce/TREX-MD",
+  "repository": "https://github.com/Berabruce/Trex-Md",
   "stack": "container",
   "env": { 
       "SESSION_ID": {
