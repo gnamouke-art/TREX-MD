@@ -41,23 +41,49 @@ const msgRetryCounterCache = new NodeCache();
 const __filename = new URL(import.meta.url).pathname;
 const __dirname = path.dirname(__filename);
 
-//===================SESSION-AUTH============================
-if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
-if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
-const sessdata = config.SESSION_ID
-const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
-filer.download((err, data) => {
-if(err) throw err
-fs.writeFile(__dirname + '/auth_info_baileys/creds.json', data, () => {
-console.log("Session Download Complete  ✅")
-})})}
+const sessionDir = path.join(__dirname, 'session');
+const credsPath = path.join(sessionDir, 'creds.json');
 
-const express = require("express");
-const app = express();
-const port = process.env.PORT || 9090;
+if (!fs.existsSync(sessionDir)) {
+    fs.mkdirSync(sessionDir, { recursive: true });
+}
 
-//=============================================
+async function downloadSessionData() {
+    console.log("Debugging SESSION_ID:", config.SESSION_ID);
 
+    if (!config.SESSION_ID) {
+        console.error('❌ Please add your session to SESSION_ID env !!');
+        return false;
+    }
+
+   const sessdata = config.SESSION_ID.split("KHAN-MD~")[1];
+
+    if (!sessdata || !sessdata.includes("#")) {
+        console.error('❌ Invalid SESSION_ID format! It must contain both file ID and decryption key.');
+        return false;
+    }
+
+    const [fileID, decryptKey] = sessdata.split("#");
+
+    try {
+        console.log("🔄 Downloading Session...");
+        const file = File.fromURL(`https://mega.nz/file/${fileID}#${decryptKey}`);
+
+        const data = await new Promise((resolve, reject) => {
+            file.download((err, data) => {
+                if (err) reject(err);
+                else resolve(data);
+            });
+        });
+
+        await fs.promises.writeFile(credsPath, data);
+        console.log("🔒 Session Successfully Loaded !!");
+        return true;
+    } catch (error) {
+        console.error('❌ Failed to download session data:', error);
+        return false;
+    }
+}
 
 async function start() {
     try {
