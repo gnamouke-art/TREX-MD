@@ -1,11 +1,8 @@
-
-
 {
-  "name": "Trex-Md",
-  "description": " Whatsapp bot.",
-  "keywords": [
-    "whatsapp bot"
-  ],
+  "name": "TREX-MD",
+  "description": "I am TREX-MD WhatsApp MultiDevice Bot built in NodeJs to enhance the experience.",
+  "logo": "https://i.ibb.co/4jBhn13/Socialthumb.jpg",
+  "keywords": ["TREX-MD"],
   "repository": "https://github.com/Berabruce/Trex-Md",
   "stack": "container",
   "env": { 
@@ -19,10 +16,35 @@
       "required": true,
       "value": "public"
     },
+    "ANTI_DELETE": {
+      "description": "make it true for use anti delete",
+      "required": true,
+      "value": "true"
+    },
     "AUTO_STATUS_SEEN": {
       "description": "make it true if you want bot to view status",
       "required": false,
       "value": "true"
+    },
+    "AUTO_STATUS_REPLY": {
+      "description": "make it true if you want to send message after seen status",
+      "required": false,
+      "value": "false"
+    },
+    "STATUS_READ_MSG": {
+      "description": "set your status reply message",
+      "required": false,
+      "value": "*Status Seen By JAWAD-MD 👻🤍*"
+    },
+    "OWNER_NAME": {
+      "description": "set your status reply message",
+      "required": false,
+      "value": "Bruce Bera"
+    },
+    "OWNER_NUMBER": {
+      "description": "set your status reply message",
+      "required": false,
+      "value": "254743982206"
     },
     "AUTO_READ": {
       "description": "make it true if you want bot to read message",
@@ -42,7 +64,7 @@
     "ALWAYS_ONLINE": {
       "description": "make it true if you want bot to show always online",
       "required": false,
-      "value": "true"
+      "value": "false"
     },
     "AUTO_BLOCK": {
       "description": "make it true if you want bot to auto block only 212 numbers",
@@ -52,7 +74,12 @@
     "REJECT_CALL": {
       "description": "make it true if you want to reject call",
       "required": false,
-      "value": "true"
+      "value": "false"
+    },
+    "PREFIX": {
+      "description": "Your Bot Prefix default (.)",
+      "required": false,
+      "value": "."
     }
     },
     "buildpacks": [
@@ -70,4 +97,3 @@
     }
   ]
 }
-
